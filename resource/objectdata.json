@@ -1,0 +1,69 @@
+{
+  "Player": {
+    "hitpoints": 5,
+    "damage": 1,
+    "blockTypeOnDeath": "Grave",
+    "behavior": "Custom",
+    "hitSound": "GravelHit"
+  },
+  "Grave": {
+    "hitpoints": 5,
+    "blockTypeOnDeath": "None",
+    "hitSound": "GravelHit"
+  },
+  "Monster": {
+    "hitpoints": 2,
+    "damage": 1,
+    "blockTypeOnDeath": "None",
+    "behavior": "Monster",
+    "hitSound": "GravelHit"
+  },
+  "Rock": {
+    "hitpoints": 7,
+    "blockTypeOnDeath": "Stone",
+    "hitSound": "MetalHit"
+  },
+  "Slime": {
+    "hitpoints": 1,
+    "blockTypeOnDeath": "None",
+    "behavior": "Wild",
+    "hitSound": "BubbleHit"
+  },
+  "Stone": {
+    "hitpoints": 1,
+    "pickable": true,
+    "builtIntoType": "StoneWall"
+  },
+  "StoneWall": {
+    "hitpoints": 10,
+    "blockTypeOnDeath": "Stone",
+    "hitSound": "MetalHit"
+  },
+  "Tree": {
+    "hitpoints": 3,
+    "blockTypeOnDeath": "Wood",
+    "hitSound": "WoodHit"
+  },
+  "Wood": {
+    "hitpoints": 1,
+    "pickable": true,
+    "builtIntoType": "WoodWall"
+  },
+  "WoodDoor": {
+    "hitpoints": 5,
+    "blockTypeOnDeath": "Wood",
+    "hitSound": "WoodHit",
+    "structure": "Door"
+  },
+  "WoodWall": {
+    "hitpoints": 5,
+    "blockTypeOnDeath": "Wood",
+    "hitSound": "WoodHit",
+    "upgrades": {
+      "Wood": "WoodDoor"
+    }
+  },
+  "ZZZ_System": {
+    "note": "this is a useless entry for development purposes"
+  }
+}

@@ -1,0 +1,11 @@
+iac1's Dungernox Java remake:
+
+The following sound files were made by artisticdude (https://opengameart.org/content/rpg-sound-pack):
+ - WoodHit.wav
+
+The following sound files were made byLuke.RUSTLTD (https://opengameart.org/content/wind1):
+ - BackgroundMusic.wav
+
+Other sound files are from Mixkit (royalty-free).
+
+All image files were created by iac1.
