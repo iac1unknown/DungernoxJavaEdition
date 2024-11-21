@@ -110,25 +110,25 @@ public class Game {
         if (Input.isKeyPressed(KeyEvent.VK_W)) {
             if (player.moveCooldown == 0) {
                 player.walkNorth(1);
-                player.moveCooldown = Util.moveCooldown;
+                player.moveCooldown = Util.MOVE_COOLDOWN;
                 selectedBlock = null;
             }
         } else if (Input.isKeyPressed(KeyEvent.VK_S)) {
             if (player.moveCooldown == 0) {
                 player.walkSouth(1);
-                player.moveCooldown = Util.moveCooldown;
+                player.moveCooldown = Util.MOVE_COOLDOWN;
                 selectedBlock = null;
             }
         } else if (Input.isKeyPressed(KeyEvent.VK_A)) {
             if (player.moveCooldown == 0) {
                 player.walkWest(1);
-                player.moveCooldown = Util.moveCooldown;
+                player.moveCooldown = Util.MOVE_COOLDOWN;
                 selectedBlock = null;
             }
         } else if (Input.isKeyPressed(KeyEvent.VK_D)) {
             if (player.moveCooldown == 0) {
                 player.walkEast(1);
-                player.moveCooldown = Util.moveCooldown;
+                player.moveCooldown = Util.MOVE_COOLDOWN;
                 selectedBlock = null;
             }
         }
@@ -159,13 +159,14 @@ public class Game {
 
             player.attack(neighborBlock);
             selectedBlock = neighborBlock;
-            player.attackCooldown = Util.attackCooldown;
+            player.attackCooldown = Util.ATTACK_COOLDOWN;
         } else {
             if (neighborBlock == null) {
                 // build new block
-                Block builtBlock = spawnBlock(new Block(0, 0, player.pickedBlock.builtIntoType));
+                Block builtBlock = new Block(0, 0, player.pickedBlock.builtIntoType);
                 builtBlock.moveTo(player, player.getDirection(), 1);
                 builtBlock.setDirection(Util.getOppositeDirection(player.getDirection()));
+                spawnBlock(builtBlock);
                 despawnBlock(player.pickedBlock);
                 player.attackCooldown = 25;
 
@@ -178,9 +179,10 @@ public class Game {
                 if (neighborBlockUpgrades == null) return;
 
                 String newType = neighborBlockUpgrades.get(player.pickedBlock.type);
-                Block builtBlock = spawnBlock(new Block(0, 0, newType));
+                Block builtBlock = new Block(0, 0, newType);
                 builtBlock.moveTo(player, player.getDirection(), 1);
                 builtBlock.setDirection(Util.getOppositeDirection(player.getDirection()));
+                spawnBlock(builtBlock);
                 despawnBlock(neighborBlock);
                 despawnBlock(player.pickedBlock);
                 player.attackCooldown = 25;
